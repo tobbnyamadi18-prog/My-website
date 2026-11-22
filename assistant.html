@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPUSPRO | AI Study Assistant</title>
+    <!-- Icon library (needs internet) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo"><i class="fa-solid fa-graduation-cap"></i><span>CAMPUS<b>PRO</b></span></div>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-book-open"></i>My Courses</a></li>
+                <li><a href="assignments.html"><i class="fa-solid fa-file-pen"></i>Assignments</a></li>
+                <li><a href="quizzes.html"><i class="fa-solid fa-circle-question"></i>Quizzes &amp; Exams</a></li>
+                <li><a href="timetable.html"><i class="fa-solid fa-calendar-days"></i>Study Timetable</a></li>
+                <li><a href="lectures.html"><i class="fa-solid fa-video"></i>Lecture Library</a></li>
+                <li><a href="performance.html"><i class="fa-solid fa-chart-line"></i>Academic Performance</a></li>
+                <li><a href="assistant.html" class="active"><i class="fa-solid fa-robot"></i>AI Study Assistant</a></li>
+                <li><a href="notifications.html"><i class="fa-solid fa-bell"></i>Notifications</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+                <li><a href="login.html" id="logoutLink" class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </nav>
+        
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <button class="icon-btn menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search your courses...">
+            </div>
+            <div class="top-right">
+                <button class="icon-btn"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
+                <div class="profile">
+                    <div class="avatar" id="avatar">S</div>
+                    <div><strong id="profileName">Student</strong><small>Student ID: CP-2026-001</small></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+                       <section class="welcome">
+                <div>
+                    <h1>AI Study Assistant</h1>
+                    <p>Ask questions about your courses and get help with revision.</p>
+                </div>
+            </section>
+
+            <section class="card chat">
+
+                <div class="chat-window">
+
+                    <div class="msg bot">
+                        <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                        <div class="msg-bubble">Hi! I am your study assistant. Ask me about any of your courses, or choose a suggestion below.</div>
+                    </div>
+
+                    <div class="msg user">
+                        <div class="msg-bubble">What is the difference between TCP and UDP?</div>
+                    </div>
+
+                    <div class="msg bot">
+                        <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                        <div class="msg-bubble">TCP sets up a connection first and makes sure data arrives complete and in order. UDP just sends data with no connection and no delivery guarantee, which makes it faster for things like video calls.</div>
+                    </div>
+
+                </div>
+                                <div class="chat-suggestions">
+                    <button type="button" class="chip">Summarize my notes</button>
+                    <button type="button" class="chip">Quiz me on Computer Networks</button>
+                    <button type="button" class="chip">Explain a topic simply</button>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Ask a question about your courses...">
+                    <button type="button" class="btn" id="sendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+
+            </section>                     
+        </main>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="guard.js"></script>
+</body>
+</html>

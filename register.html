@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPUSPRO | Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+
+    <main class="auth-wrapper">
+        <section class="auth-card">
+
+            <div class="logo auth-logo">
+                <i class="fa-solid fa-graduation-cap"></i><span>CAMPUS<b>PRO</b></span>
+            </div>
+
+            <h1>Create your account</h1>
+            <p class="auth-sub">Register to get your own student dashboard.</p>
+
+            <form class="auth-form" id="registerForm">
+
+                <label for="regName">Full name</label>
+                <input type="text" id="regName" placeholder="e.g. Kwame Mensah" autocomplete="name" required>
+
+                <label for="regEmail">Student email</label>
+                <input type="email" id="regEmail" placeholder="you@university.edu" autocomplete="email" required>
+
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" placeholder="Create a password" autocomplete="new-password" required>
+                <small class="hint">Use at least 8 characters.</small>
+
+                <label for="regConfirm">Confirm password</label>
+                <input type="password" id="regConfirm" placeholder="Repeat your password" autocomplete="new-password" required>
+
+                <label class="check terms">
+                    <input type="checkbox" id="terms"> I agree to the terms and conditions
+                </label>
+
+                <p class="form-message" id="registerMessage"></p>
+
+                <button type="button" class="btn" id="registerBtn">Create Account</button>
+
+            </form>
+
+            <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>

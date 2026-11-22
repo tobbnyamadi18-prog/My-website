@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPUSPRO | Lecture Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo"><i class="fa-solid fa-graduation-cap"></i><span>CAMPUS<b>PRO</b></span></div>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-book-open"></i>My Courses</a></li>
+                <li><a href="assignments.html"><i class="fa-solid fa-file-pen"></i>Assignments</a></li>
+                <li><a href="quizzes.html"><i class="fa-solid fa-circle-question"></i>Quizzes &amp; Exams</a></li>
+                <li><a href="timetable.html"><i class="fa-solid fa-calendar-days"></i>Study Timetable</a></li>
+                <li><a href="lectures.html" class="active"><i class="fa-solid fa-video"></i>Lecture Library</a></li>
+                <li><a href="performance.html"><i class="fa-solid fa-chart-line"></i>Academic Performance</a></li>
+                <li><a href="assistant.html"><i class="fa-solid fa-robot"></i>AI Study Assistant</a></li>
+                <li><a href="notifications.html"><i class="fa-solid fa-bell"></i>Notifications</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+                <li><a href="login.html" id="logoutLink" class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="main">
+
+        <header class="topbar">
+            <button class="icon-btn menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search your courses...">
+            </div>
+            <div class="top-right">
+                <button class="icon-btn"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
+                <div class="profile">
+                    <div class="avatar" id="avatar">S</div>
+                    <div><strong id="profileName">Student</strong><small>Student ID: CP-2026-001</small></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <section class="welcome">
+                <div>
+                    <h1>Lecture Library</h1>
+                    <p>Upload and organize your lecture notes, slides and study materials.</p>
+                </div>
+            </section>
+
+            <div class="grid">
+
+                <section class="card">
+                    <h2>Upload a File</h2>
+                    <div class="upload-form">
+
+                        <label for="lectureTitle">Title</label>
+                        <input type="text" id="lectureTitle" placeholder="e.g. Week 3 - Network Layers">
+
+                        <label for="lectureCourse">Course</label>
+                        <select id="lectureCourse">
+                            <option value="">Select a course</option>
+                            <option>Visual Basic Programming</option>
+                            <option>Software Engineering</option>
+                            <option>Computer Networks</option>
+                            <option>Internet Tech. &amp; Web Design</option>
+                        </select>
+
+                        <label for="lectureFile" class="drop-zone">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <strong id="fileLabel">Choose a file</strong>
+                            <small>PDF, PowerPoint, Word or images, up to 20 MB</small>
+                        </label>
+                        <input type="file" id="lectureFile" hidden accept=".pdf,.ppt,.pptx,.doc,.docx,.png,.jpg,.jpeg">
+
+                        <p class="form-message" id="lectureMessage"></p>
+
+                        <button type="button" class="btn" id="uploadBtn">Upload</button>
+
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>My Lectures</h2>
+                    <div id="lectureList">
+                        <p class="empty">No files uploaded yet.</p>
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-client.js"></script>
+<script src="guard.js"></script>
+<script src="lectures.js"></script>
+</body>
+</html>
