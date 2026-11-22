@@ -39,7 +39,7 @@ async function registerStudent() {
         password: passwordInput.value,
         options: {
             data: { full_name: nameInput.value.trim() },
-            emailRedirectTo: window.location.origin + "/login.html"
+                      emailRedirectTo: new URL("login.html", window.location.href).href 
         }
     });
 
