@@ -760,6 +760,84 @@ ul { list-style: none; }
     color: #ff7b7b;
 }
 
+/* ===== 8K. ADD FORMS ===== */
+.add-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+.add-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.add-form label {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.add-form input,
+.add-form select {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--panel2);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: 0;
+}
+
+.add-form input:focus,
+.add-form select:focus {
+    border-color: var(--blue);
+}
+
+.add-form .btn {
+    margin-top: 0;
+}
+
+.course-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+@media (max-width: 800px) {
+    .add-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== 8L. MOBILE FIXES ===== */
+body {
+    overflow-x: clip;
+}
+
+.search {
+    min-width: 0;
+}
+
+.search input {
+    min-width: 0;
+    width: 100%;
+}
+
+.top-right {
+    flex-shrink: 0;
+}
+
+.grid > *,
+.stats > *,
+.course-grid > *,
+.timetable > * {
+    min-width: 0;
+}
+
 /* ===== 9. RESPONSIVE ===== */
 @media (max-width: 1100px) {
     .stats { grid-template-columns: repeat(2, 1fr); }
